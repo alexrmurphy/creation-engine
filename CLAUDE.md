@@ -32,10 +32,11 @@ I'm learning as I build. Explain each step in one plain sentence, and never make
 
 ## Where we are
 
-Phase 0 of the build plan. The full plan lives in my Dare to Be Notion under Systems & Infrastructure.
+Phase 0 of the build plan. The full plan lives in my Dare to Be Notion under Systems & Infrastructure: [Creation Architect Build Plan](https://app.notion.com/p/3e833a5a6088814e93b4dd50eb930c6b). Read it at the start of a session. Its **Inbox** section collects items added from Cowork or my phone: sort each into a ticket with me, then clear it.
 
-- Done: **T0.1** setup, **T0.2** Content Console imported unchanged.
-- Next: **T0.3** split the Content Console into engine and Dare to Be profile.
-- Then: **T0.4** glossary, **T0.5** schema map, **T0.6** reinstall in Cowork and test with a real content pass.
+- Done: **T0.1** setup, **T0.2** Content Console imported unchanged, **T0.3** engine and Dare to Be profile split.
+- Next: **T0.4** glossary, **T0.5** schema map, **T0.6** reinstall in Cowork and test with a real content pass.
 
-New Console features are paused until the split is done.
+New Console features are paused until T0.6 proves the split works.
+
+See `docs/architecture.md` for how the engine and profiles are organised.

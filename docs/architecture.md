@@ -28,7 +28,9 @@ Voice rules (for example, no em dashes) are profile content, not locked rules. T
 
 ### Craft library additions
 
-Creators study the craft library as part of working with the system. Advanced creators may add their own entries, which live in their profile (a `craft/` folder inside it) and sit alongside the engine library. The engine library is changed only by the engine owner. A creator's addition can be promoted into the engine library if it proves useful for everyone.
+The craft library is **canonical**: one base, the same for every creator. The engine is meant to be smart on its own, so foundational wisdom (books, frameworks, craft knowledge) is built into it rather than supplied by each creator. Creators may be given readable versions to study, as "what the engine is informed by".
+
+Creators study the craft library as part of working with the system. Advanced creators may add their own entries, which live in their profile (a `craft-additions/` folder inside it) and sit alongside the engine library. The engine library is changed only by the engine owner. A creator's addition can be promoted into the engine library if it proves useful for everyone.
 
 ## Taxonomy
 
@@ -70,18 +72,22 @@ Proposed; built out as the related tasks happen.
 engine/
   skills/
     content-console/
-      SKILL.md          procedure and locked rules
-      craft/            craft library as Markdown (planned)
+      SKILL.md            procedure, locked rules, craft essentials, dial defaults
+      craft/              craft library as Markdown (planned, T1.5)
 profiles/
   dare-to-be/
-    PROFILE.md          dials, voice pointers, Notion map, doctrine
-    examples/           Dare to Be worked examples from the craft books (planned)
-    craft/              Dare to Be's own craft additions, if any
-schemas/                field definitions (T0.5)
-docs/                   specs like this one
+    profile.md            who, voice rules, conventions, doctrine, dial settings
+    notion-map.md         where each Notion page and database lives
+    craft-examples/       Dare to Be worked examples taken out of the craft books (planned, T1.5)
+    craft-additions/      Dare to Be's own additions to the craft library, if any
+    snapshots/            dated copies of Notion reference docs (planned, T1.3)
+schemas/                  field definitions (T0.5) and glossary (T0.4)
+docs/
+  architecture.md         this spec
+  decisions/              one short note per open or settled design decision
 ```
 
 ## Planned work
 
-- **Craft library to Markdown.** Convert *The Pattern Book*, *The Thread* and *The Shape of an Idea* into Markdown under `engine/skills/content-console/craft/`, with Dare to Be examples moved to `profiles/dare-to-be/examples/`. Then write neutral examples drawn from many kinds of businesses so the library stands on its own for other creators. Nicer PDFs for creators to study can be produced from the Markdown later. Scheduled after T0.3.
+- **Craft library to Markdown (T1.5).** Convert *The Pattern Book*, *The Thread* and *The Shape of an Idea* into Markdown under `engine/skills/content-console/craft/`, with Dare to Be examples moved to `profiles/dare-to-be/craft-examples/`. Then write neutral examples drawn from many kinds of businesses so the library stands on its own for other creators, before the Feed a Brain pilot (T3.2). Nicer PDFs for creators to study can be produced from the Markdown later.
 - **Locked vs dials.** Settle which rules creators can adjust, around December 2026.
