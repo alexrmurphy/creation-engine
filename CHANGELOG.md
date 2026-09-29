@@ -4,6 +4,11 @@ All notable changes to this project are recorded here, newest first.
 
 ## 2026-09-29
 
+- **Gardener brought into the engine.** It was built in a standalone `gardener-skill/` folder, already split into engine and profile, and is now in the repo alongside Capture and the Console.
+  - `engine/skills/gardener/SKILL.md`: the procedure, unchanged except that it now finds its profile at `profiles/<creator>/gardener.md` (read with `profile.md` and `notion-map.md`) and stops if none is found.
+  - `engine/skills/gardener/references/profile-template.md`: the blank profile, moved from `profiles/_template/PROFILE.md` so it travels with the skill.
+  - New `profiles/dare-to-be/gardener.md`: the Dare to Be Gardener settings, moved from the standalone folder.
+  - README, architecture layout and `profile.md` updated to list it.
 - **Capture imported and split into engine and Dare to Be profile.**
   - `engine/skills/capture/SKILL.md`: procedure only. Names no creator and loads the profile first. Care points that apply to every creator became numbered locked rules. New Dials table (source label, section headings, deck headline and decisions header, deck look, icon).
   - `engine/skills/capture/references/`: the foundation pass (the kinds to look for, where candidates go) and the stage rule, with neutral examples.

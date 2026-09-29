@@ -1,6 +1,6 @@
 # Profile: <Workspace name>
 
-Copy this folder to `profiles/<slug>/` and fill in every slot. Delete a section only if the engine step it feeds doesn't apply. The engine (`../../SKILL.md`) reads this file at the start of every pass.
+Copy this file to `profiles/<creator>/gardener.md` and fill in every slot. Delete a section only if the engine step it feeds doesn't apply. The engine (`engine/skills/gardener/SKILL.md`) reads this file at the start of every pass.
 
 ## Owner
 

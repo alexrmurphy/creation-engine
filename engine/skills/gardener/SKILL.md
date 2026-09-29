@@ -1,6 +1,6 @@
 ---
 name: "gardener"
-description: "Gardener for a Notion workspace: weekly tend or monthly deep gardening pass, a review report, then apply what the owner approves. Runs against a profile in profiles/ that says whose workspace it is and where everything lives. Use when the user says garden, gardening pass, tend, deep garden, or garden: apply."
+description: "Gardener for a Notion workspace: weekly tend or monthly deep gardening pass, a review report, then apply what the owner approves. Runs against the loaded creator's profile, which says whose workspace it is and where everything lives. Use when the user says garden, gardening pass, tend, deep garden, or garden: apply."
 ---
 
 # Gardener
@@ -13,9 +13,11 @@ Gardening is about **order, placement, freshness and loose ends**. It never rewr
 
 This file is the **engine**: the procedure, the beds, the report and the rules. It holds no workspace facts.
 
-Everything about a particular workspace lives in a **profile**: `profiles/<name>/PROFILE.md`. That includes who the owner is, which connector to use, the IDs of the Gardening Log and Open Loops, the zones, the canon, retired terms, protected areas and review preferences. `profiles/_template/PROFILE.md` lists every slot a profile fills.
+Everything about a particular workspace lives in the creator's **profile**: `profiles/<creator>/gardener.md`, read alongside that creator's `profile.md` and `notion-map.md`. That includes who the owner is, which connector to use, the IDs of the Gardening Log and Open Loops, the zones, the canon, retired terms, protected areas and review preferences. `references/profile-template.md` lists every slot a Gardener profile fills.
 
-**Choosing the profile.** If there is only one profile (not counting `_template`), use it. If there are several, match on the workspace or owner the user names. If that's still unclear, ask. Never mix two profiles in one pass.
+In the repo these sit in `profiles/<creator>/`. In an installed setup they are provided as project files alongside this skill. If no Gardener profile can be found, say so and stop rather than guessing.
+
+**Choosing the profile.** If only one creator has a `gardener.md`, use it. If there are several, match on the workspace or owner the user names. If that's still unclear, ask. Never mix two profiles in one pass.
 
 **Read the profile in full at the start of every pass**, then read the canon sources it names (they win over the profile's own lists). When the engine and the profile disagree on a fact about the workspace, the profile wins. When they disagree on procedure, the engine wins unless the profile names an **Override** for that step.
 

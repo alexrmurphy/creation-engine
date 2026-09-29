@@ -1,6 +1,6 @@
-# Profile: Dare to Be
+# Dare to Be - Gardener Settings
 
-The Gardener profile for Ryan's Dare to Be Notion. The engine (`../../SKILL.md`) holds the procedure. This file holds the facts about this workspace. Keep workspace changes here, and keep procedure changes in the engine.
+The Gardener profile for Ryan's Dare to Be Notion. The engine (`engine/skills/gardener/SKILL.md`) holds the procedure. This file holds the facts about this workspace. Keep workspace changes here, and keep procedure changes in the engine.
 
 ## Owner
 

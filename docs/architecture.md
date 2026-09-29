@@ -78,12 +78,16 @@ engine/
       SKILL.md            procedure, locked rules, dial defaults
       references/         foundation pass and stage rules, the same for every creator
       assets/             review deck template, neutral theme with slots for the profile's
+    gardener/
+      SKILL.md            procedure, the six beds, report shape and rules
+      references/         profile template listing every slot a creator's gardener.md fills
 profiles/
   dare-to-be/
     profile.md            who, voice rules, conventions, doctrine, dial settings
     notion-map.md         where each Notion page and database lives
     capture.md            Capture settings: routing map, formats, deck theme, dials, care points
     capture-worked-example.md   the first walk capture and the corrections that became rules
+    gardener.md           Gardener settings: Gardening Log, Open Loops, zones, canon, walker split
     craft-examples/       Dare to Be worked examples taken out of the craft books (planned, T1.5)
     craft-additions/      Dare to Be's own additions to the craft library, if any
     snapshots/            dated copies of Notion reference docs (planned, T1.3)
