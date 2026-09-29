@@ -23,6 +23,6 @@ Shipped:
 Not shipped here:
 
 - Reinstall in Cowork (High) - next step, T0.6.
-- Capture Queue → Inbox; verify Capture is saved (High) - Capture is not in the repo yet.
+- Capture Queue → Inbox; verify Capture is saved (High) - Capture is now in the repo (2026-09-29, engine and profile split); the Inbox rename is still to do.
 - Rename umbrella to Creation Engine and add the router (Low) - waits on the naming open loop.
 - "The hidden self" replaces "closet self"; voice file additions (Belongs Elsewhere) - Notion edits, not skill edits.

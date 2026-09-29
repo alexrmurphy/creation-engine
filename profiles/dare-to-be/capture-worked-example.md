@@ -1,4 +1,6 @@
-# Worked example: the first walk capture (27–28 Sept 2026)
+# Dare to Be - Capture Worked Example
+
+Read with `capture.md` when you want to see a full run. The rules that came out of it now live in the engine (stages, locked rules) and in `capture.md` (examples, care points).
 
 A ~10,000-word walk transcript. The skill's logic was developed on this run.
 

@@ -4,34 +4,40 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{{TITLE}}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+{{FONT_LINK}}
 <style>
+/* Neutral theme. A profile's deck theme ({{THEME_CSS}} below) overrides any of these tokens. */
 :root{
-  --paper:#EFE6D6; --water:#14263F; --river:#3F7FA6; --clay:#9A5B3C; --gold:#E3A92B; --ember:#B8391E; --ink:#171310;
-  --bg:var(--paper); --fg:var(--ink); --soft:#5b5046; --panel:#f7f1e6; --rule:var(--gold); --accent:var(--water); --chip:#e4d8c3;
+  --bg:#faf9f7; --fg:#1c1c1c; --soft:#5f5f5f; --panel:#ffffff; --chip:#e6e2da;
+  --rule:#c9c3b8;   /* hairlines: hero edge, quoted words, bottom bar */
+  --accent:#2f4a6d; /* chosen option, main button */
+  --mark:#8a7f70;   /* undecided card edge */
+  --done:#3d7a6a;   /* decided card edge */
+  --focus:#2f6fd6;  /* focus rings */
+  --font-display:Georgia,"Times New Roman",serif;
+  --font-body:system-ui,-apple-system,"Segoe UI",sans-serif;
   box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){ --bg:var(--water); --fg:var(--paper); --soft:#b9c3cf; --panel:#1b3150; --accent:var(--gold); --chip:#243d60; }
+  :root:not([data-theme="light"]){ --bg:#16181c; --fg:#eceae6; --soft:#a3a6ad; --panel:#1f2228; --chip:#2c3038; --rule:#3a3e46; --accent:#8fb3e0; --mark:#6e6a63; --done:#6fb3a0; --focus:#8fb3e0; }
 }
-:root[data-theme="dark"]{ --bg:var(--water); --fg:var(--paper); --soft:#b9c3cf; --panel:#1b3150; --accent:var(--gold); --chip:#243d60; }
+:root[data-theme="dark"]{ --bg:#16181c; --fg:#eceae6; --soft:#a3a6ad; --panel:#1f2228; --chip:#2c3038; --rule:#3a3e46; --accent:#8fb3e0; --mark:#6e6a63; --done:#6fb3a0; --focus:#8fb3e0; }
+{{THEME_CSS}}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:"Work Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.55}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.55}
 .wrap{max-width:780px;margin:0 auto;padding:40px 22px 140px}
 header.hero{border-left:2px solid var(--rule);padding:6px 0 6px 22px;margin-bottom:36px}
-h1{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:clamp(30px,6vw,46px);line-height:1.08;margin:0 0 14px}
+h1{font-family:var(--font-display);font-weight:500;font-size:clamp(30px,6vw,46px);line-height:1.08;margin:0 0 14px}
 .lede{color:var(--soft);max-width:62ch;margin:0}
-h2{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:26px;margin:48px 0 6px}
+h2{font-family:var(--font-display);font-weight:500;font-size:26px;margin:48px 0 6px}
 .sec-note{color:var(--soft);margin:0 0 18px;max-width:64ch}
-.card{background:var(--panel);border-left:3px solid var(--clay);padding:18px 20px 16px;margin:0 0 16px;border-radius:2px}
-.card.decided{border-left-color:var(--river)}
+.card{background:var(--panel);border-left:3px solid var(--mark);padding:18px 20px 16px;margin:0 0 16px;border-radius:2px}
+.card.decided{border-left-color:var(--done)}
 .card.cut{opacity:.6;border-left-color:var(--soft)}
-.card h3{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:20px;line-height:1.25;margin:0 0 10px}
-.id{font-size:13px;color:var(--soft);margin-right:8px;font-family:"Work Sans",sans-serif}
-.words{font-family:"Fraunces",Georgia,serif;font-size:16px;line-height:1.6;margin:0 0 12px;padding-left:12px;border-left:1px solid var(--rule)}
+.card h3{font-family:var(--font-display);font-weight:500;font-size:20px;line-height:1.25;margin:0 0 10px}
+.id{font-size:13px;color:var(--soft);margin-right:8px;font-family:var(--font-body)}
+.words{font-family:var(--font-display);font-size:16px;line-height:1.6;margin:0 0 12px;padding-left:12px;border-left:1px solid var(--rule)}
 dl{margin:0 0 10px;display:grid;grid-template-columns:118px 1fr;gap:4px 12px;font-size:15px}
 dt{color:var(--soft)}
 dd{margin:0}
@@ -41,15 +47,15 @@ dd{margin:0}
 .choices input{position:absolute;opacity:0;pointer-events:none}
 .choices span{display:inline-block;padding:7px 12px;border:1px solid var(--soft);border-radius:18px;font-size:14px;background:transparent;color:var(--fg)}
 .choices input:checked + span{background:var(--accent);border-color:var(--accent);color:var(--bg)}
-.choices input:focus-visible + span{outline:2px solid var(--gold);outline-offset:2px}
+.choices input:focus-visible + span{outline:2px solid var(--focus);outline-offset:2px}
 textarea{width:100%;min-height:52px;padding:9px 10px;border:1px solid var(--chip);background:var(--bg);color:var(--fg);font:inherit;font-size:15px;border-radius:3px;resize:vertical}
-textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+textarea:focus{outline:2px solid var(--focus);outline-offset:1px}
 .bar{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--rule);padding:12px 22px calc(12px + env(safe-area-inset-bottom,0px))}
 .bar-in{max-width:780px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .count{flex:1;color:var(--soft);font-size:15px}
 button{font:inherit;font-weight:500;padding:10px 18px;border-radius:22px;border:1px solid var(--accent);background:var(--accent);color:var(--bg);cursor:pointer}
 button.ghost{background:transparent;color:var(--fg);border-color:var(--soft)}
-button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+button:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 #out{display:none;margin-top:28px}
 #out textarea{min-height:260px;font-size:13px}
 @media (max-width:560px){dl{grid-template-columns:1fr}dt{margin-top:4px}}
@@ -60,7 +66,7 @@ button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 <div class="wrap">
 <header class="hero">
   <h1>{{HEADLINE}}</h1>
-  <p class="lede">Everything I pulled from the transcript, with where I think it goes and what's already in Notion. Pick one option on each card, add your own direction wherever you like, then copy your decisions and paste them back into the chat. Nothing gets filed until you do.</p>
+  <p class="lede">Everything I pulled from the capture, with where I think it goes and what's already in Notion. Pick one option on each card, add your own direction wherever you like, then copy your decisions and paste them back into the chat. Nothing gets filed until you do.</p>
 </header>
 <main id="deck"></main>
 <section id="out">
@@ -75,21 +81,22 @@ button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 </div></div>
 
 <script>
+// Keys and order are fixed by the engine. Replace a label (t) or note (n) only where the profile's deck settings give one.
 const SECTIONS = [
- {k:"F",t:"What sits underneath",n:"Lines that point at something you hold true. \"Yes\" here sends them to a holding list for the monthly deep sweep, not straight into The Work, so the ground stays distilled."},
- {k:"H",t:"Hungers",n:"For The Potent Person page."},
+ {k:"F",t:"What sits underneath",n:"Lines that point at something you hold true. \"Yes\" here sends them to a holding list for the monthly deep sweep, not straight into your foundation pages, so the ground stays distilled."},
+ {k:"H",t:"Audience hungers",n:"For the page that holds what the people you serve are hungry for."},
  {k:"P",t:"Pieces for the Pipeline",n:"Seed means an idea. Sprout means a shape is already showing. Draft means close to postable. Merge means an existing row gets the new material instead."},
- {k:"L",t:"Your life archive",n:"For Ryan's Life and Currents. Several need a date only you have."},
- {k:"Q",t:"Quotes, openers and reframes",n:"Your lines go to My Quotes, the Phrase Bank or the Reframe Bank. Other people's lines get checked before we use them."},
+ {k:"L",t:"Your life archive",n:"For your life events and through-lines. Several need a date only you have."},
+ {k:"Q",t:"Quotes, openers and reframes",n:"Your lines go to your quotes, openers or reframes. Other people's lines get checked before we use them."},
  {k:"O",t:"Open loops and pathways of discovery",n:"For the Open Loops database. These are for deciding together when the time is right, not now."}
 ];
 const ITEMS = [
  // FILL: one object per unit. Keys: id (F/H/P/L/Q/O + number), s (section key), t (plain title),
- // w (his exact words, fillers removed), h (where it goes, with Stage and Shape for Pipeline),
- // m (what's already in Notion, or "Nothing found."), n (your note or the question only he can answer).
- // Examples from the first run:
- {id:"F3",s:"F",t:"More like myself, or less",w:"Does this help me feel more like myself or less like myself? Does this bring me closer to my soul or farther away?",h:"What We Hold True / Principles (candidate), plus a discernment question in the Tools Library",m:"Nothing found.",n:"It works for AI, social media, any tool. It's the test under the whole AI orbit, which is why it may belong in the ground and not only in a post."},
- {id:"P4",s:"P",t:"The drum",w:"...the wolf skin... the beat of the drum, that connects to my own heartbeat, and also connects to the beat of the earth...",h:"New row at Sprout. Shape: Object",m:"Harvest Queue: \"The four-direction drum.\" Pipeline: \"Holding the drum.\"",n:"Something to check: the older note and today's words disagree. Which matches the carvings?"}
+ // w (their exact words, fillers removed), h (where it goes, with Stage and Shape for Pipeline),
+ // m (what's already in Notion, or "Nothing found."), n (your note or the question only they can answer).
+ // Neutral examples; replace them all:
+ {id:"F1",s:"F",t:"Rest is part of the work",w:"Rest isn't the reward you get after the work. It's part of the work.",h:"Principles (candidate for the monthly sweep)",m:"Nothing found.",n:"It sits under several pieces in this capture, which is why it may belong in the ground and not only in a post."},
+ {id:"P1",s:"P",t:"The old notebook",w:"...I found the notebook from that first year, and every page was the same three goals...",h:"New row at Sprout. Shape: Object",m:"Pipeline: \"What I kept writing down.\"",n:"Close to the existing row. Post them at least three weeks apart, or merge. Which year was the notebook from?"}
 ];
 
 const CHOICES = [["yes","Yes, file it"],["else","Somewhere else"],["maybe","Maybe later"],["cut","Cut"]];
@@ -145,7 +152,7 @@ document.addEventListener("input", e => {
 
 const LABEL = {yes:"Yes", else:"Somewhere else", maybe:"Maybe later", cut:"Cut"};
 document.getElementById("copy").addEventListener("click", async () => {
-  const lines = ["{{DECISIONS_HEADER}}"]; // e.g. "Walk capture decisions"
+  const lines = ["{{DECISIONS_HEADER}}"]; // from the dials, e.g. "Capture decisions"
   ITEMS.forEach(i => {
     const st = state[i.id] || {};
     if (!st.c && !(st.t||"").trim()) return;

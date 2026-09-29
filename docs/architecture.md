@@ -74,10 +74,16 @@ engine/
     content-console/
       SKILL.md            procedure, locked rules, craft essentials, dial defaults
       craft/              craft library as Markdown (planned, T1.5)
+    capture/
+      SKILL.md            procedure, locked rules, dial defaults
+      references/         foundation pass and stage rules, the same for every creator
+      assets/             review deck template, neutral theme with slots for the profile's
 profiles/
   dare-to-be/
     profile.md            who, voice rules, conventions, doctrine, dial settings
     notion-map.md         where each Notion page and database lives
+    capture.md            Capture settings: routing map, formats, deck theme, dials, care points
+    capture-worked-example.md   the first walk capture and the corrections that became rules
     craft-examples/       Dare to Be worked examples taken out of the craft books (planned, T1.5)
     craft-additions/      Dare to Be's own additions to the craft library, if any
     snapshots/            dated copies of Notion reference docs (planned, T1.3)

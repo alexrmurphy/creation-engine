@@ -7,7 +7,8 @@ The home for content skills, the profiles they run against, and the schemas and 
 | Folder | What lives here |
 |---|---|
 | `engine/skills/` | Skills. Each one gets its own folder holding a `SKILL.md`. |
-| `engine/skills/content-console/` | The Content Console: queue, sprout, refine and deep pass for Dare to Be content. |
+| `engine/skills/content-console/` | The Content Console: queue, sprout, refine and deep pass for the loaded creator's content. |
+| `engine/skills/capture/` | Capture: sorts long raw captures into their homes in the creator's Notion, via a review deck. |
 | `profiles/dare-to-be/` | Brand- and person-specific settings for Dare to Be. |
 | `schemas/` | Data shapes the skills rely on, such as Notion pipeline properties. |
 | `docs/` | Notes and reference material about the engine itself. |

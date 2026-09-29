@@ -2,6 +2,17 @@
 
 All notable changes to this project are recorded here, newest first.
 
+## 2026-09-29
+
+- **Capture imported and split into engine and Dare to Be profile.**
+  - `engine/skills/capture/SKILL.md`: procedure only. Names no creator and loads the profile first. Care points that apply to every creator became numbered locked rules. New Dials table (source label, section headings, deck headline and decisions header, deck look, icon).
+  - `engine/skills/capture/references/`: the foundation pass (the kinds to look for, where candidates go) and the stage rule, with neutral examples.
+  - `engine/skills/capture/assets/review-deck.html`: same behaviour. Colours and fonts are now tokens with a neutral default, filled from the profile through `{{FONT_LINK}}` and `{{THEME_CSS}}`. Section notes and example cards made neutral.
+  - New `profiles/dare-to-be/capture.md`: triggers, connector, dials, the Dare to Be deck theme and section notes, how The Work maps kinds to pages, the routing map, formats per destination, stage examples, care points.
+  - `profiles/dare-to-be/capture-worked-example.md`: the first walk capture, moved from the skill.
+  - `profiles/dare-to-be/notion-map.md`: added the foundation pages, My Quotes, Quotes from Others, Brand premise, Life page, Harvest Queue, the Reframe Bank link, and a data source table. Page IDs no longer live in the skill.
+  - Dropped from Capture's routing map: the old Pillars list (Somatics, Soul, Story, Strategy, Systems). `profile.md` holds the current paired five.
+
 ## 2026-09-28
 
 - **First skill tune-up (Improvement Log, 13 Console rows).**

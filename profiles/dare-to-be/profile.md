@@ -1,6 +1,6 @@
 # Dare to Be - Creator Profile
 
-Everything the Content Console needs that is specific to Ryan and Dare to Be. The engine reads this file, with `notion-map.md`, at the start of every run. Anything here overrides the engine's defaults.
+Everything the Content Console needs that is specific to Ryan and Dare to Be. The engine reads this file, with `notion-map.md`, at the start of every run. Capture also reads it, with its own settings in `capture.md`. Anything here overrides the engine's defaults.
 
 ## Who
 
