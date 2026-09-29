@@ -38,14 +38,14 @@ The structure is shared across every install, so each creator's Notion workspace
 
 | Field | Values |
 |---|---|
-| Status (Seed → Sprout → Draft → Refined → Completed → Published) | Shared. The procedure depends on these stages. |
-| Form (the twenty-two forms) | Shared. Comes from the craft library. |
+| Stage (Seed → Sprout → Draft → Refined → Ready → Scheduled → Published, with a video path from Sprout: Scripted → Prepped to Film → Filmed → Editing → Ready) | Shared. The procedure depends on these stages. |
+| Shape (the twenty-two forms of the Pattern Book) | Shared. Comes from the craft library. |
 | Medium (for example written, video, carousel, text on screen, quote card) | Shared. The engine names them; creators use the same names. |
 | Content pillars | Per creator. The engine defines that pillars exist; the profile lists them. |
 | Series | Per creator. |
 | Hungers and similar doctrine | Per creator. |
 
-The field definitions live in this repo (the schema map, task T0.5). Each creator's Notion database is built from that definition, and the skill reads the same definition, so all three stay in step.
+Skills never hardcode current field names: they read them at run time from the creator's **Database Registry** in Notion. The field definitions live in this repo (the schema map, task T0.5). Each creator's Notion database is built from that definition, and the skill reads the same definition, so all three stay in step.
 
 ## Where things are stored
 

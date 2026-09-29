@@ -28,9 +28,20 @@ Three tiers. Nothing lives in two of them. The Notion map says where each named 
 
 The **Content Pipeline** is the source of truth for every seed, draft and piece. Never hold a parallel copy of a row anywhere.
 
-Statuses: **Seed → Sprout → Draft → Refined → Completed → Published**.
+**Read the fields at run time, never from this file.** Property names, stage names and option lists change in Notion faster than this file does. At the start of every run, read the **Database Registry** named in the Notion map for the current names, and check them against the Pipeline's live schema. This file names fields by the job they do. If the registry and the Pipeline disagree, trust the Pipeline and flag the registry as out of date.
 
-Properties: **Form** (the twenty-two forms), **Medium**, **Series**, Platform, Published Date, Tool, Clips, Images, Notes. The profile lists any values specific to this creator.
+**Stage** carries a piece through its life. The stages this procedure depends on:
+
+- Written: **Seed → Sprout → Draft → Refined → Ready → Scheduled → Published**.
+- Video: **Seed → Sprout → Scripted → Prepped to Film → Filmed → Editing → Ready → Scheduled → Published**.
+
+What each early stage means, so every skill places material the same way:
+
+- **Seed** - a concept without a forming shape.
+- **Sprout** - raw material, even long, loose and channelled, and even when there is enough for a draft but the shape has not been reviewed. A Sprout row carries everything the creator channelled that connects to it.
+- **Draft** - actually drafted.
+
+The fields the procedure relies on, by job: **Shape** (the twenty-two shapes, multi-select), **Medium** (one specific thing the row ships as), **Track** (fills from Medium), **Pillars**, **Series**, **Platform**, **Published Date**, **Scheduled For**, the scheduler link, **Anchor Post** and **Spin-offs** (versions of one idea), and relations to the Tools Library and **Media Library**. The profile lists the values specific to this creator.
 
 **Tier 2 - Working strategy. Notion canonical, read live.**
 
@@ -39,7 +50,9 @@ These change often and the creator edits them, sometimes from their phone.
 - **Cadence & Mix** - the balance strategy. Read at the start of every Queue run and for every neighbours check.
 - **Content Formats** - what each format is, plus the named video treatments (ways to shoot any piece).
 - **Phrase Bank**, **Reframe Bank**, **Quotes** - harvest destinations and opener patterns.
-- **Clip Library**, **Tools Library**, and the creator's doctrine pages named in the profile.
+- **Media Library** (photos and video clips, from capture idea to used), **Tools Library**, and the creator's doctrine pages named in the profile. Capture ideas and shoot lists live in the Media Library. An item becomes a Pipeline row only when it is built into a piece.
+- **Open Loops** - open decisions, questions and cleanups.
+- **Improvement Log** - changes a skill needs, consolidated at the tune-up.
 - **The life archive** - events by era, and the through-lines across eras. This is what the specificity rule searches.
 
 **Tier 3 - Deep reference. Loaded in full at the start of a pass.**
@@ -48,17 +61,17 @@ Long, stable, needed in full.
 
 - **The creator's personal reference docs**, listed in the profile: their voice file and AI filter (both non-negotiable), and their foundations (doctrine, lexicon, retired terms, origin scenes).
 - **The craft library**, read-only, the same for every creator. Until it is converted into files packaged with this skill, it is provided as project files:
-  - **`The_Pattern_Book.pdf`** - the twenty-two forms, worked, with examples. **The authority on form.** Its fifteen-second route is how a form gets chosen.
+  - **`The_Pattern_Book.pdf`** - the twenty-two forms (shapes), worked, with examples. **The authority on shape.** Its fifteen-second route is how a shape gets chosen.
   - **`The_Thread_Storytelling_and_Content_Craft.pdf`** - the process, the four currencies, the four gaps, ten openings, six landings, the specificity ladder, diagnostics.
   - **`The_Shape_of_an_Idea.pdf`** - the machinery for material that is not a story.
 
 **The rule when something new needs a home:** if the creator would plausibly edit it on their phone, it goes in Notion. If it is long, stable, and needed in full at the start of a pass, it goes in a reference doc.
 
-## The twenty-two forms
+## The twenty-two shapes
 
-From the Pattern Book, grouped by where the raw material starts. The families are a finding aid, not a property; derive them when reading.
+The Pattern Book calls these forms. On the Pipeline and in this file they are **shapes**, so the word does not clash with a creator's teaching categories. Grouped by where the raw material starts. The families are a finding aid, not a property; derive them when reading.
 
-| Family | Forms |
+| Family | Shapes |
 |---|---|
 | It starts in a moment | Moment, Object, Return, Failed Attempt, Confession, Observation |
 | It starts in a change of mind | Turn, Correction, Reframe, Question Held |
@@ -66,9 +79,9 @@ From the Pattern Book, grouped by where the raw material starts. The families ar
 | It starts in what you want them to do | Tool, Diagnostic, Permission, Constraint |
 | It starts with the reader | Direct Address, Composite |
 
-Hybrids are normal and Form is multi-select, but **name both parts before drafting**. A hybrid built without naming its parts is a piece with two threads.
+Hybrids are normal and Shape is multi-select, but **name both parts before drafting**. A hybrid built without naming its parts is a piece with two threads.
 
-Most Seeds have no Form yet, and that is correct. Form is chosen at the fifteen-second route, which happens in Sprout.
+Most Seeds have no Shape yet, and that is correct. Shape is chosen at the fifteen-second route, which happens in Sprout.
 
 ## Locked rules
 
@@ -81,8 +94,12 @@ These apply in every mode, for every creator.
 5. **Quote harvest is a standing step.** Every pass, flag quotable lines and add them to the Quotes page named in the profile, filed by theme, source row noted, marked `(adapted)` if tightened. A line is quotable when it stands alone, carries one claim or one image, sounds like the creator, and would work on a card. Reframes go to the Reframe Bank, opener patterns to the Phrase Bank.
 6. **Flag the bigger question first.** If a piece has a core question larger than refinement, surface it before the light edit. The creator answers or says proceed.
 7. **Every pass ends with two buttons:** build next draft and push to Notion, or review feedback and generate a new draft.
-8. **The write-your-own box is never optional.** Every card in every pass carries one. Options are a starting point, not a menu to pick from.
+8. **Questions come as cards, and every card stands on its own.** Refinement questions are never written into the reply. They come as cards with options and a write-your-own box, and the box is never optional. Options are a starting point, not a menu to pick from. A tap-card shows only the bare question, so every card carries its full context in plain language: what it is, where it lives, the exact text, and the options.
 9. **Keep the raw original.** The creator's original unedited material is preserved in a collapsed section on the row (the profile names it), never overwritten by a later pass. It protects verbatim when a later pass wants to reach back, it builds a corpus of pure creator text for voice work, and it makes visible what the Console has actually been changing.
+10. **Set line breaks by hand.** Every line that will appear on a card, a slide or on-screen text is shown already broken, following the line-break rules in the profile. Never hand the creator a run-on sentence to break themselves. A different break is a legitimate option on its own; say what it changes.
+11. **Each medium version is its own row.** When a piece spins out into another medium, create a new Pipeline row with its own title, linked to its anchor through Anchor Post. Claude names it. A spin-off without an angle yet gets a placeholder: the anchor's title plus the medium. If the creator gives a name that duplicates an existing row, rename it and say so.
+12. **Nothing open gets lost.** Any decision, question, naming choice or proposed system change raised in a run becomes a row in Open Loops. At the end of the run, suggest where each thing the creator shared belongs in their Notion, with buttons to approve or redirect.
+13. **Log what the skill should learn.** At the end of every run, any correction the creator made, rule settled, rename or workflow change that should alter a skill becomes a row in the Improvement Log: skill, what changes, why, source. Lessons about voice are logged as belonging to the voice file, not the skill. The tune-up consolidates them.
 
 ## The specificity rule
 
@@ -105,7 +122,7 @@ Settings with a default. The profile overrides any of them.
 |---|---|
 | Edit depth in the light edit | 10 to 20 percent |
 | Notes in a standard pass | Three to five |
-| Deep pass triggers | `deep pass`, a piece heading for Completed, or a story slot still open |
+| Deep pass triggers | `deep pass`, a piece heading for Ready, or a story slot still open |
 | Platform length limits and cut order | None. Set per creator in the profile |
 | Longest abstract run | Two sentences |
 | Analogies per idea | One |
@@ -134,7 +151,7 @@ A deep pass is a second sitting, not a longer first one. It runs on a draft that
 Keep it to the length dial. Fixed shape:
 
 1. **The light edit.** The edit depth dial. Liberty to rearrange repeats, fold mid-piece reintroductions, cut trailing material. The creator's words, their order where their order works.
-2. **The form read.** Which of the twenty-two it is, or which hybrid. If the creator named the form, work in it. If not, name what it is behaving like and what it could become. One thread throughout.
+2. **The shape read.** Which of the twenty-two it is, or which hybrid. If the creator named the shape, work in it. If not, name what it is behaving like and what it could become. One thread throughout.
 3. **The notes.** As many as the notes dial allows, and only the ones that actually matter. Each one the creator can approve, decline, or answer with their own direction.
 4. **The depth line.** One line naming which other lenses had something to say, with counts only and no content. For example: `also available: specificity (4), fire test (1), neighbours (2)`. The creator expands what they want, or says `deep pass` for all of it.
 5. **Counts.** Words and characters. Flag if over any platform limit in the profile.
@@ -149,7 +166,7 @@ All of these run every pass. In the standard pass only what fires hardest reache
 - **The fire test.** Is this pointing at the fire, or at the creator noticing the fire? Both feel like sharing from the inside. Only one gives the reader somewhere to look.
 - **Digested vs. raw.** Metabolized material is an offering, raw material is a request. Urgency to publish usually means it is not finished digesting. Raise this gently and only when it is clearly live.
 - **What the piece is doing.** In one line, what this piece does for the reader, using the framework in the profile if it has one. **Descriptive, never a gate.** Pieces that fall outside the framework are legitimate, justify themselves, and are never declined or deprioritised for it.
-- **Form dosage.** The Pattern Book sets limits per form. A feed mostly of Reframes reads as slogans. A Confession every few months is intimacy; every week is a genre. Check the recent record for the form this piece is in.
+- **Shape dosage.** The Pattern Book sets limits per shape. A feed mostly of Reframes reads as slogans. A Confession every few months is intimacy; every week is a genre. Check the recent record for the shape this piece is in.
 - **Neighbours.** Which Refined or Published rows share this claim, frame or origin scene. How recently they published. What angle separation would keep them distinct. Name the angle change rather than saying "make it different."
 - **Voice and filter.** Standing check against the creator's voice file, AI filter and voice rules. Violations go straight into the notes, never behind the depth line.
 
@@ -161,11 +178,18 @@ Push to the Pipeline as a row at **Draft** or **Refined**:
 - The collapsed raw-original section holding the creator's original material, untouched.
 - Working title options for the creator to pick from.
 - Editor notes as inline comments on the lines they refer to.
-- A collapsed **Reflections** section: form, themes, initial feedback, spacing and differentiation notes, cut and parked material, open loops.
+- A collapsed **Reflections** section: shape, themes, initial feedback, spacing and differentiation notes, cut and parked material, open loops.
 - Parked lines also become their own **Seed** rows.
-- **Form**, **Medium**, **Series** and **Platform** set. Tool, Clips and Images related where relevant.
+- **Shape**, **Medium**, **Pillars**, **Series** and **Platform** set. Tools and Media related where relevant.
+- Any other medium this piece will ship as gets its own spin-off row (locked rule 11).
 
-When the creator says a piece has gone out, set **Status** to Published and fill **Published Date** and **Platform** in the same move. This is what feeds cadence and spacing, so never leave it for later.
+## Publishing handoff
+
+Until publishing has its own skill, the Console carries a piece the rest of the way:
+
+- **Ready → Scheduled.** When the creator schedules a piece, set Stage to **Scheduled** and fill **Scheduled For** and the scheduler link in the same move. The profile names the scheduler.
+- **The final image.** File the post's final photo where the profile says ready-to-publish media goes, and put its link on the piece's Media Library row.
+- **Published.** When the creator says a piece has gone out, set Stage to **Published** and fill **Published Date** and **Platform** in the same move. This is what feeds cadence and spacing, so never leave it for later.
 
 Platform cuts: aim just under the platform's limit in the profile. Keep the creator's words, cut fat rather than compressing sentences. **Show the cutting criteria and the proposed cuts before making them.** Follow the cut order in the profile.
 
@@ -238,10 +262,10 @@ The same two buttons as every pass. An open feedback note on any card keeps the 
 The front door. Triggered by "what should I work on", "run the queue", or the start of a content session.
 
 1. **Read the Pipeline.** All rows at Seed, Sprout and Draft.
-2. **Read the record.** Published rows in the queue record window, by Form, Medium, Platform and Published Date. Say plainly when the window is thin or when rows predate Published Date, rather than working from Created and implying the math is solid.
+2. **Read the record.** Published rows in the queue record window, by Shape, Medium, Track, Pillars, Platform and Published Date. Say plainly when the window is thin or when rows predate Published Date, rather than working from Created and implying the math is solid.
 3. **Read Cadence & Mix in Notion.** Report where the record has tilted across its axes. This is a corrective, not a quota.
 4. **Surface the top picks** (the queue picks dial), each with: what it is, what stage it's at, why it's ready now, and which axis it serves. At least one pick should answer the tilt rather than just being the strongest candidate.
-5. **Name what's gone quiet.** Forms and families absent from the record, and the written-to-video balance.
+5. **Name what's gone quiet.** Shapes and families absent from the record, and the balance across tracks (written, video and the rest).
 6. **Offer the rest** as a browsable list so the creator can override.
 
 The creator picks, and the Console moves into Sprout or Refine.
@@ -259,12 +283,12 @@ The point is to change **what the creator makes**, not just what happens to it a
 - **The thread.** The one line the piece is actually about. If the seed does not have one yet, say so plainly and offer two or three candidate threads rather than forcing one.
 - **The one claim.** One plain sentence, no cleverness, with an implied opponent. If it needs an "and" joining two ideas, it is two pieces. Record it on the row.
 - **The gap.** What the reader believes now, what they would believe after, and the distance between.
-- **The form.** Run the Pattern Book's fifteen-second route: what is the raw material made of, and what does the reader end up with. Name one form, or two for a hybrid. When two fit, take the smaller; when they are the same size, take the riskier. Set **Form** on the row.
+- **The shape.** Run the Pattern Book's fifteen-second route: what is the raw material made of, and what does the reader end up with. Name one shape, or two for a hybrid. When two fit, take the smaller; when they are the same size, take the riskier. Set **Shape** on the row.
 - **Opening hook type.** Two or three options from the Phrase Bank and the ten openings, with the actual opening line sketched for each, and which of the four gaps each one opens.
-- **Material to draw on.** Real scenes from the life archive and the creator's foundations that this thread could pull on. Retrieved, never invented. Relevant doctrine, reframes, tools and distinctions. The Pattern Book's worked example for the chosen form is the model to hold, not to copy.
+- **Material to draw on.** Real scenes from the life archive and the creator's foundations that this thread could pull on. Retrieved, never invented. Relevant doctrine, reframes, tools and distinctions. The Pattern Book's worked example for the chosen shape is the model to hold, not to copy.
 - **What the piece is doing.** Using the framework in the profile, and if it points at an audience hunger the profile defines, which one. Outside the framework is a fine answer.
 - **The close.** Which of the six landings, and where it probably lands.
-- **Medium and channel.** Written, video, or both, with a note on why.
+- **Medium and channel.** The specific medium it ships as, from the creator's Medium list, with a note on why. Name any spin-offs it wants, each to become its own row.
 
 The creator edits, reacts, or redirects at any point. Then the row moves to **Sprout** with the brief in the body, and they create from it.
 
@@ -280,15 +304,9 @@ Anything shot gets transcribed and re-entered as a written row on the Pipeline, 
 
 ---
 
-# Modes not yet built
+# Other jobs belong to other skills
 
-Named here so the shape is reserved. When the creator asks for one, say what it needs and offer to build it now. The profile notes anything blocking one for this creator.
-
-- **Fan-out.** One finished piece becomes the platform cuts, a carousel, text-on-screen lines, quote card lines, X-style cards. Carousel and text-on-screen are the same shape, so one derivation produces both. Batched, approve or decline per asset, approved ones filed to Notion as drafts. Needs the creator's brand guide for templates and design language.
-- **Visuals.** Pairing runs both directions: a visual assigned to a piece, and a quote card or carousel generating its caption in the creator's voice at whatever length fits. Also a queued run for AI image generation. Needs the creator's photo folder.
-- **Clips.** A browsable view of available footage by category so the creator knows what exists before planning. Uses the Clip Library.
-- **Calendar.** Which piece goes out which day, eventually auto-populated from ready assets that fit the cadence.
-- **Garden.** A periodic sweep: quote and reframe harvest across rows touched since the last pass, stale seeds surfaced, duplicates merged, and Cadence & Mix revised in Notion against what the Published data now shows.
+The Console refines. Fan-out, Visuals, Video, Publish and Gardener are separate skills; the **Skill Map** named in the Notion map says what each does and what it is waiting on. When the creator asks for one of those jobs, say which skill owns it and whether it exists yet, and offer to start it. Until Publish exists, the Console runs the *Publishing handoff* above.
 
 ---
 
