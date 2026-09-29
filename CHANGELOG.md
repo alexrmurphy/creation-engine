@@ -2,6 +2,14 @@
 
 All notable changes to this project are recorded here, newest first.
 
+## 2026-09-29 (Wrap Things Up)
+
+- **Wrap Things Up added to the engine, rebuilt from evidence.** The original was made in a Cowork chat and never saved where the repo can see it. This version is rebuilt from the five Improvement Log rows its first run wrote. Decision note: `docs/decisions/wrap-things-up-skill.md`.
+  - New `engine/skills/wrap-things-up/SKILL.md`: sweeps the whole session into seven baskets (skill lessons, skill candidates, decisions, tasks, open loops, updates, stray work), checks Notion for matches, shows one approval list, files what's approved, then hands creative material to Capture. Eleven locked rules; dials for source label, Capture handoff, approval style, default priority and stray files.
+  - New `engine/skills/wrap-things-up/references/profile-template.md`.
+  - New `profiles/dare-to-be/wrap-up.md` and `profiles/noble/wrap-up.md`: where each basket files, Origin value, field formats, care points. Noble's skill lessons go to the Dare to Be Improvement Log, lesson text only.
+  - README and architecture layout list it.
+
 ## 2026-09-29 (Visual Media spec)
 
 - New `engine/specs/visual-media.md`: the workflow spec for all four modes, the handoffs with the Console and Fan-out, the eye-training loop, rules, dials, engine vs profile, and build order (Intake and Browse first).

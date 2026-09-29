@@ -83,6 +83,9 @@ engine/
     gardener/
       SKILL.md            procedure, the six beds, report shape and rules
       references/         profile template listing every slot a creator's gardener.md fills
+    wrap-things-up/
+      SKILL.md            procedure, the seven baskets, locked rules, the Capture handoff
+      references/         profile template listing every slot a creator's wrap-up.md fills
 profiles/
   dare-to-be/
     profile.md            who, voice rules, conventions, doctrine, dial settings
@@ -90,6 +93,7 @@ profiles/
     capture.md            Capture settings: routing map, formats, deck theme, dials, care points
     capture-worked-example.md   the first walk capture and the corrections that became rules
     gardener.md           Gardener settings: Gardening Log, Open Loops, zones, canon, walker split
+    wrap-up.md            Wrap Things Up settings: where each basket files, Origin value, dials
     craft-examples/       Dare to Be worked examples taken out of the craft books (planned, T1.5)
     craft-additions/      Dare to Be's own additions to the craft library, if any
     snapshots/            dated copies of Notion reference docs (planned, T1.3)

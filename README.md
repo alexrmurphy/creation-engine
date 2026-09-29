@@ -10,6 +10,7 @@ The home for content skills, the profiles they run against, and the schemas and 
 | `engine/skills/content-console/` | The Content Console: queue, sprout, refine and deep pass for the loaded creator's content. |
 | `engine/skills/capture/` | Capture: sorts long raw captures into their homes in the creator's Notion, via a review deck. |
 | `engine/skills/gardener/` | Gardener: weekly tend and monthly deep passes that keep the creator's Notion tidy, via a review report. |
+| `engine/skills/wrap-things-up/` | Wrap Things Up: closes out a session so nothing lives only in the chat. Files skill lessons, decisions, tasks and loops after one approval list, and hands creative material to Capture. |
 | `profiles/dare-to-be/` | Brand- and person-specific settings for Dare to Be. |
 | `schemas/` | Data shapes the skills rely on, such as Notion pipeline properties. |
 | `docs/` | Notes and reference material about the engine itself. |
