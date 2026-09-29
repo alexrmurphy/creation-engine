@@ -306,7 +306,7 @@ Anything shot gets transcribed and re-entered as a written row on the Pipeline, 
 
 # Other jobs belong to other skills
 
-The Console refines. Fan-out, Visuals, Video, Publish and Gardener are separate skills; the **Skill Map** named in the Notion map says what each does and what it is waiting on. When the creator asks for one of those jobs, say which skill owns it and whether it exists yet, and offer to start it. Until Publish exists, the Console runs the *Publishing handoff* above.
+The Console refines. Fan-out, Visual Media, Video, Publish and Gardener are separate skills; the **Skill Map** named in the Notion map says what each does and what it is waiting on. When the creator asks for one of those jobs, say which skill owns it and whether it exists yet, and offer to start it. Until Publish exists, the Console runs the *Publishing handoff* above.
 
 ---
 

@@ -37,6 +37,6 @@ Phase 0 of the build plan. The full plan lives in my Dare to Be Notion under Sys
 - Done: **T0.1** setup, **T0.2** Content Console imported unchanged, **T0.3** engine and Dare to Be profile split.
 - Next: **T0.4** glossary, **T0.5** schema map, **T0.6** reinstall in Cowork and test with a real content pass.
 
-New Console features are paused until T0.6 proves the split works.
+The feature pause and the build freeze were lifted on Sept 29. New skills are built in Skill Map order, spec first.
 
 See `docs/architecture.md` for how the engine and profiles are organised.

@@ -90,4 +90,4 @@ Worked examples and the full selects live in Notion at Content / Quotes / Card-R
 
 - **Question Held tends to vanish** from the record, because an asking piece loses to a more finished one every time it competes. Name it in the Queue when it has gone quiet.
 - **Most Pipeline rows have no Shape.** They get one as they pass through Sprout or Refine, rather than in a bulk pass.
-- **Fan-out** and **Visuals** are both blocked only on the brand guide, in progress. The photo library location is set.
+- **Fan-out** and **Visual Media** (Pair and Generate) are both blocked only on the brand guide, in progress. Visual Media's Intake and Browse don't need it. The photo library location is set.

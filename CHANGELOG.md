@@ -2,6 +2,13 @@
 
 All notable changes to this project are recorded here, newest first.
 
+## 2026-09-29 (Visual Media decided)
+
+- **Visuals and Clips become one skill, Visual Media**, with four modes: Intake, Browse, Pair, Generate. Decision note: `docs/decisions/visual-media-skill.md`. Spec to follow; nothing built.
+  - `engine/skills/content-console/SKILL.md`: the pointer to other skills names Visual Media.
+  - `profiles/dare-to-be/profile.md`: working note renamed to match.
+- **Build freeze lifted.** The Phase 0 feature pause and the hold on new skills until the first cohort are both off. `CLAUDE.md` updated; in Notion, the freeze Open Loop is marked Decided, and the Q4 Focus, Build Plan and Skill Map are updated.
+
 ## 2026-09-29
 
 - **Gardener brought into the engine.** It was built in a standalone `gardener-skill/` folder, already split into engine and profile, and is now in the repo alongside Capture and the Console.
