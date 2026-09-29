@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{TITLE}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EFE6D6; --water:#14263F; --river:#3F7FA6; --clay:#9A5B3C; --gold:#E3A92B; --ember:#B8391E; --ink:#171310;
+  --bg:var(--paper); --fg:var(--ink); --soft:#5b5046; --panel:#f7f1e6; --rule:var(--gold); --accent:var(--water); --chip:#e4d8c3;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){ --bg:var(--water); --fg:var(--paper); --soft:#b9c3cf; --panel:#1b3150; --accent:var(--gold); --chip:#243d60; }
+}
+:root[data-theme="dark"]{ --bg:var(--water); --fg:var(--paper); --soft:#b9c3cf; --panel:#1b3150; --accent:var(--gold); --chip:#243d60; }
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Work Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.55}
+.wrap{max-width:780px;margin:0 auto;padding:40px 22px 140px}
+header.hero{border-left:2px solid var(--rule);padding:6px 0 6px 22px;margin-bottom:36px}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:clamp(30px,6vw,46px);line-height:1.08;margin:0 0 14px}
+.lede{color:var(--soft);max-width:62ch;margin:0}
+h2{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:26px;margin:48px 0 6px}
+.sec-note{color:var(--soft);margin:0 0 18px;max-width:64ch}
+.card{background:var(--panel);border-left:3px solid var(--clay);padding:18px 20px 16px;margin:0 0 16px;border-radius:2px}
+.card.decided{border-left-color:var(--river)}
+.card.cut{opacity:.6;border-left-color:var(--soft)}
+.card h3{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:20px;line-height:1.25;margin:0 0 10px}
+.id{font-size:13px;color:var(--soft);margin-right:8px;font-family:"Work Sans",sans-serif}
+.words{font-family:"Fraunces",Georgia,serif;font-size:16px;line-height:1.6;margin:0 0 12px;padding-left:12px;border-left:1px solid var(--rule)}
+dl{margin:0 0 10px;display:grid;grid-template-columns:118px 1fr;gap:4px 12px;font-size:15px}
+dt{color:var(--soft)}
+dd{margin:0}
+.note{font-size:15px;margin:6px 0 12px}
+.choices{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.choices label{cursor:pointer}
+.choices input{position:absolute;opacity:0;pointer-events:none}
+.choices span{display:inline-block;padding:7px 12px;border:1px solid var(--soft);border-radius:18px;font-size:14px;background:transparent;color:var(--fg)}
+.choices input:checked + span{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.choices input:focus-visible + span{outline:2px solid var(--gold);outline-offset:2px}
+textarea{width:100%;min-height:52px;padding:9px 10px;border:1px solid var(--chip);background:var(--bg);color:var(--fg);font:inherit;font-size:15px;border-radius:3px;resize:vertical}
+textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--rule);padding:12px 22px calc(12px + env(safe-area-inset-bottom,0px))}
+.bar-in{max-width:780px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.count{flex:1;color:var(--soft);font-size:15px}
+button{font:inherit;font-weight:500;padding:10px 18px;border-radius:22px;border:1px solid var(--accent);background:var(--accent);color:var(--bg);cursor:pointer}
+button.ghost{background:transparent;color:var(--fg);border-color:var(--soft)}
+button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+#out{display:none;margin-top:28px}
+#out textarea{min-height:260px;font-size:13px}
+@media (max-width:560px){dl{grid-template-columns:1fr}dt{margin-top:4px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <h1>{{HEADLINE}}</h1>
+  <p class="lede">Everything I pulled from the transcript, with where I think it goes and what's already in Notion. Pick one option on each card, add your own direction wherever you like, then copy your decisions and paste them back into the chat. Nothing gets filed until you do.</p>
+</header>
+<main id="deck"></main>
+<section id="out">
+  <p class="sec-note">Your decisions are below. If copying didn't work, select all and copy by hand.</p>
+  <textarea id="outText" readonly></textarea>
+</section>
+</div>
+<div class="bar"><div class="bar-in">
+  <span class="count" id="count"></span>
+  <button class="ghost" id="reset" type="button">Clear all</button>
+  <button id="copy" type="button">Copy decisions</button>
+</div></div>
+
+<script>
+const SECTIONS = [
+ {k:"F",t:"What sits underneath",n:"Lines that point at something you hold true. \"Yes\" here sends them to a holding list for the monthly deep sweep, not straight into The Work, so the ground stays distilled."},
+ {k:"H",t:"Hungers",n:"For The Potent Person page."},
+ {k:"P",t:"Pieces for the Pipeline",n:"Seed means an idea. Sprout means a shape is already showing. Draft means close to postable. Merge means an existing row gets the new material instead."},
+ {k:"L",t:"Your life archive",n:"For Ryan's Life and Currents. Several need a date only you have."},
+ {k:"Q",t:"Quotes, openers and reframes",n:"Your lines go to My Quotes, the Phrase Bank or the Reframe Bank. Other people's lines get checked before we use them."},
+ {k:"O",t:"Open loops and pathways of discovery",n:"For the Open Loops database. These are for deciding together when the time is right, not now."}
+];
+const ITEMS = [
+ // FILL: one object per unit. Keys: id (F/H/P/L/Q/O + number), s (section key), t (plain title),
+ // w (his exact words, fillers removed), h (where it goes, with Stage and Shape for Pipeline),
+ // m (what's already in Notion, or "Nothing found."), n (your note or the question only he can answer).
+ // Examples from the first run:
+ {id:"F3",s:"F",t:"More like myself, or less",w:"Does this help me feel more like myself or less like myself? Does this bring me closer to my soul or farther away?",h:"What We Hold True / Principles (candidate), plus a discernment question in the Tools Library",m:"Nothing found.",n:"It works for AI, social media, any tool. It's the test under the whole AI orbit, which is why it may belong in the ground and not only in a post."},
+ {id:"P4",s:"P",t:"The drum",w:"...the wolf skin... the beat of the drum, that connects to my own heartbeat, and also connects to the beat of the earth...",h:"New row at Sprout. Shape: Object",m:"Harvest Queue: \"The four-direction drum.\" Pipeline: \"Holding the drum.\"",n:"Something to check: the older note and today's words disagree. Which matches the carvings?"}
+];
+
+const CHOICES = [["yes","Yes, file it"],["else","Somewhere else"],["maybe","Maybe later"],["cut","Cut"]];
+const KEY = "{{STORAGE_KEY}}"; // unique per capture, e.g. "capture-2026-09-27"
+let state = {};
+try { const s = localStorage.getItem(KEY); if (s) state = JSON.parse(s) || {}; } catch(e) { state = {}; }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
+
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c])); }
+
+function render(){
+  const deck = document.getElementById("deck");
+  deck.innerHTML = SECTIONS.map(sec => {
+    const cards = ITEMS.filter(i => i.s === sec.k).map(i => {
+      const st = state[i.id] || {};
+      return `<article class="card ${st.c ? (st.c==="cut"?"cut decided":"decided") : ""}" id="c-${i.id}">
+        <h3><span class="id">${i.id}</span>${esc(i.t)}</h3>
+        <p class="words">${esc(i.w)}</p>
+        <dl><dt>Where it goes</dt><dd>${esc(i.h)}</dd>
+        ${i.m ? `<dt>Already there</dt><dd>${esc(i.m)}</dd>` : ""}</dl>
+        ${i.n ? `<p class="note">${esc(i.n)}</p>` : ""}
+        <div class="choices" role="radiogroup" aria-label="Decision for ${i.id}">
+          ${CHOICES.map(([v,l]) => `<label><input type="radio" name="r-${i.id}" value="${v}" ${st.c===v?"checked":""} data-id="${i.id}"><span>${l}</span></label>`).join("")}
+        </div>
+        <textarea data-id="${i.id}" aria-label="Your own direction for ${i.id}" placeholder="${st.c==="else" ? "Where should it go instead?" : "Your own direction, answers to my questions, or edits"}">${esc(st.t||"")}</textarea>
+      </article>`;
+    }).join("");
+    return `<section><h2>${esc(sec.t)}</h2><p class="sec-note">${esc(sec.n)}</p>${cards}</section>`;
+  }).join("");
+  count();
+}
+
+function count(){
+  const n = ITEMS.filter(i => state[i.id] && state[i.id].c).length;
+  document.getElementById("count").textContent = `${n} of ${ITEMS.length} decided`;
+}
+
+document.addEventListener("change", e => {
+  const id = e.target.dataset && e.target.dataset.id;
+  if (!id || e.target.type !== "radio") return;
+  state[id] = state[id] || {}; state[id].c = e.target.value; save();
+  const card = document.getElementById("c-"+id);
+  card.classList.add("decided"); card.classList.toggle("cut", e.target.value==="cut");
+  const ta = card.querySelector("textarea");
+  ta.placeholder = e.target.value==="else" ? "Where should it go instead?" : "Your own direction, answers to my questions, or edits";
+  if (e.target.value==="else") ta.focus();
+  count();
+});
+document.addEventListener("input", e => {
+  if (e.target.tagName !== "TEXTAREA" || !e.target.dataset.id) return;
+  const id = e.target.dataset.id; state[id] = state[id] || {}; state[id].t = e.target.value; save();
+});
+
+const LABEL = {yes:"Yes", else:"Somewhere else", maybe:"Maybe later", cut:"Cut"};
+document.getElementById("copy").addEventListener("click", async () => {
+  const lines = ["{{DECISIONS_HEADER}}"]; // e.g. "Walk capture decisions"
+  ITEMS.forEach(i => {
+    const st = state[i.id] || {};
+    if (!st.c && !(st.t||"").trim()) return;
+    lines.push(`${i.id} ${i.t}: ${st.c ? LABEL[st.c] : "No choice"}${(st.t||"").trim() ? " | " + st.t.trim() : ""}`);
+  });
+  const undecided = ITEMS.filter(i => !(state[i.id]||{}).c).map(i => i.id);
+  if (undecided.length) lines.push(`Not decided: ${undecided.join(", ")}`);
+  const text = lines.join("\n");
+  const out = document.getElementById("out"), ta = document.getElementById("outText");
+  ta.value = text; out.style.display = "block";
+  const btn = document.getElementById("copy");
+  try { await navigator.clipboard.writeText(text); btn.textContent = "Copied"; }
+  catch(e){ ta.focus(); ta.select(); btn.textContent = "Select and copy below"; }
+  setTimeout(() => { btn.textContent = "Copy decisions"; }, 2500);
+  out.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+});
+document.getElementById("reset").addEventListener("click", () => {
+  if (!confirm("Clear every decision and note on this page?")) return;
+  state = {}; save(); render(); document.getElementById("out").style.display = "none";
+});
+
+render();
+</script>
+</body>
+</html>
