@@ -62,6 +62,8 @@ Skills never hardcode current field names: they read them at run time from the c
 
 Project files in the Claude app belong to one project. A skill is installed once and is available in every project, and it can carry supporting files. Packaging the craft library with the skill means the same library is available wherever the skill runs, and updating it means editing this repo and reinstalling the skill.
 
+Several skills need the same guides (the Console, Fan-out and Visual Media all need carousel craft), and an installed skill cannot read another skill's files. So the craft library has **one home in the repo, `engine/craft/`**, shared by every skill. Each skill's `SKILL.md` names the guides it reads, and packaging copies those guides into that skill's zip. The copies are generated, never edited: change a guide in `engine/craft/` and reinstall the skills that read it. Guides are **one per format or subject** (carousels, quote cards, text on screen, and so on), with an overview guide pointing to them, so a skill loads only what its task needs.
+
 A client install is therefore: the skill (carrying the craft library) plus a profile folder they fill in, with their personal reference docs in their own project or local folder.
 
 ## Planned layout
@@ -70,10 +72,10 @@ Proposed; built out as the related tasks happen.
 
 ```
 engine/
+  craft/                  the craft library as Markdown, one guide per format or subject, shared by every skill (planned, T1.5)
   skills/
     content-console/
       SKILL.md            procedure, locked rules, craft essentials, dial defaults
-      craft/              craft library as Markdown (planned, T1.5)
     capture/
       SKILL.md            procedure, locked rules, dial defaults
       references/         foundation pass and stage rules, the same for every creator
@@ -99,5 +101,5 @@ docs/
 
 ## Planned work
 
-- **Craft library to Markdown (T1.5).** Convert *The Pattern Book*, *The Thread* and *The Shape of an Idea* into Markdown under `engine/skills/content-console/craft/`, with Dare to Be examples moved to `profiles/dare-to-be/craft-examples/`. Then write neutral examples drawn from many kinds of businesses so the library stands on its own for other creators, before the Feed a Brain pilot (T3.2). Nicer PDFs for creators to study can be produced from the Markdown later.
+- **Craft library to Markdown (T1.5).** Convert *The Pattern Book*, *The Thread* and *The Shape of an Idea* into Markdown under `engine/craft/`, with Dare to Be examples moved to `profiles/dare-to-be/craft-examples/`. Then write neutral examples drawn from many kinds of businesses so the library stands on its own for other creators, before the Feed a Brain pilot (T3.2). Nicer PDFs for creators to study can be produced from the Markdown later.
 - **Locked vs dials.** Settle which rules creators can adjust, around December 2026.

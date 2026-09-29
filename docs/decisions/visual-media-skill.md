@@ -1,6 +1,6 @@
 # One Visual Media skill
 
-**Status:** Settled Sept 29: one skill, not two. The build freeze was lifted the same day, so the workflow spec comes next, then the build.
+**Status:** Settled Sept 29: one skill, not two. The build freeze was lifted the same day. Spec: `engine/specs/visual-media.md`.
 
 The Skill Map's **Visuals** and the imported Console's planned **Clips** skill become one skill, **Visual Media**.
 
@@ -41,9 +41,12 @@ Only if Intake grows into a heavy job with its own schedule, such as a weekly Dr
 - **Engine:** the procedure, the head-crop rule, the spacing logic, a measuring script, the lightbox template, and a neutral edition of *The Frame*.
 - **Profile** (`profiles/dare-to-be/visual-media.md`, to add): folders and intake lanes, palette values, categories, signature devices (aperture, passage), spacing dials, and the image generation tool.
 
-## Open, for the spec
+## Settled with the spec
 
-- **Captions for a visual.** Pair includes "a caption for a visual" in the proposal. That is voice work, so it may belong to Fan-out or the Console instead.
-- **The lightbox.** An HTML review deck like Capture's, the Notion Gallery view, or both.
+- **Captions and card words** are written by the Console or Fan-out. Visual Media supplies and composes the image, and never writes the words that go out.
+- **Browse** is both: an HTML deck for compare, gaps, spacing and the eye drill, and the Notion Gallery for quick looks.
+- **Craft guides** live once in a shared `engine/craft/` folder, one guide per format, copied into each skill that reads them at packaging (see `docs/architecture.md`).
+
+## Still open
 - **Build order.** Intake and Browse first (they don't need the brand guide), then Pair and Generate once the brand guide is v1.
 - **Drift found:** Image Selection Criteria v1.3 still says no image uploads to Notion and that the Preview field was removed. The Media Library now has a Preview field and a Gallery view. Update the page to match whichever is true.

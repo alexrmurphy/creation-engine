@@ -2,6 +2,12 @@
 
 All notable changes to this project are recorded here, newest first.
 
+## 2026-09-29 (Visual Media spec)
+
+- New `engine/specs/visual-media.md`: the workflow spec for all four modes, the handoffs with the Console and Fan-out, the eye-training loop, rules, dials, engine vs profile, and build order (Intake and Browse first).
+- `docs/architecture.md`: the craft library moves to a shared `engine/craft/` folder, one guide per format, copied into each skill that reads it at packaging.
+- `docs/decisions/visual-media-skill.md`: captions, Browse and the craft guides' home settled.
+
 ## 2026-09-29 (Visual Media decided)
 
 - **Visuals and Clips become one skill, Visual Media**, with four modes: Intake, Browse, Pair, Generate. Decision note: `docs/decisions/visual-media-skill.md`. Spec to follow; nothing built.
